@@ -24,10 +24,11 @@ const App = () => {
     e.preventDefault();
     try {
       if (color1 && color2) {
-        let gradColor1 = new Values(`#${color1}`).all(20);
-        let gradColor2 = new Values(`#${color2}`).all(20);
+        let gradColor1 = new Values(`${color1}`).all(20);
+        let gradColor2 = new Values(`${color2}`).all(20);
         setClrList1(gradColor1);
         setClrList2(gradColor2);
+        handleColors();
       }
     } catch (error) {
       console.log(error);
@@ -39,7 +40,8 @@ const App = () => {
   const handleColors = () => {
     let colors = [];
     for (let i = 0; i < clrList1.length; i++) {
-      colors[i] = clrList1[i] + ' ' + clrList2[i];
+      colors[i] = [clrList1[i], clrList2[i]];
+      console.log(colors);
       setMergedColors(colors);
     }
   };
@@ -47,13 +49,7 @@ const App = () => {
   useEffect(() => {
     handleColors();
   }, []);
-  // check console for data values
-  console.log(clrList1); // first color data
-  console.log(clrList2); // second color data
 
-  mergedColors.forEach((clrs) => {
-    // console.log(clrs);
-  });
   return (
     <div className='wrapper' onSubmit={handleSubmit}>
       <form>
@@ -83,7 +79,35 @@ const App = () => {
       </form>
       <div>
         {/* display gradient palletes */}
-        <section className='colors'></section>
+        <section className=''>
+          <div className='color-pallette'>
+            {mergedColors.map((colors, index) => {
+              const firstSets = colors[0];
+              const secondSets = colors[1];
+
+              // fist object properties
+              const { rgb, alpha, weight } = firstSets;
+              const bgVal1 = rgb.join(',');
+
+              // second object properties
+              const rgb2 = secondSets.rgb;
+              const alpha2 = secondSets.alpha;
+              const weight2 = secondSets.weight;
+
+              const bgVal2 = rgb2.join(',');
+
+              return (
+                <ul key={index}>
+                  <li
+                    style={{
+                      backgroundImage: `linear-gradient(to left, rgb(${bgVal1}), rgb(${bgVal2}))`,
+                    }}
+                  ></li>
+                </ul>
+              );
+            })}
+          </div>
+        </section>
       </div>
     </div>
   );

@@ -9,6 +9,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+li {
+  list-style: none;
+}
 .wrapper {
   width: 90%;
   max-width: 1000px;
@@ -29,4 +32,18 @@ button {
 }
 button {
   cursor: pointer;
+}
+ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+section {
+  margin-top: 1rem;
+}
+li {
+  padding: 2rem;
+  color: #2cda57;
+  color: #3f96b1;
+  outline: 1px solid rgb(161, 161, 161);
 }
