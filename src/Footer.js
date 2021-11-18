@@ -28,7 +28,7 @@ export const Footer = ({ bgColor1, bgColor2 }) => {
             {/* github */}
             <span>
               <a
-                href='https://www.github.com/ fesoque'
+                href='https://github.com/FesoQue'
                 target='_blank'
                 rel='noreferrer'
               >
@@ -58,12 +58,13 @@ export const Footer = ({ bgColor1, bgColor2 }) => {
           className='footer-pattern footer-pattern-d'
           alt='PATTERN'
         />
-      </div>
-      <div className='copyright attr' style={{ background: `${bgColor1}` }}>
-        {/* <p>© {newDate}. All rights reserved</p> */}
-        <p>
-          Crafted && Designed by <a href='#'>Adefeso Q.A</a>
-        </p>
+        <div className='copyright attr'>
+          {/* <p>© {newDate}. All rights reserved</p> */}
+          <p>
+            Crafted && Designed by{' '}
+            <a href='https://github.com/FesoQue'>Adefeso Q.A</a>
+          </p>
+        </div>
       </div>
     </footer>
   );

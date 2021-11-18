@@ -145,12 +145,12 @@ select {
 button {
   min-width: 15ch;
   padding: 15px 0;
-  background: none;
-  font-size: 20px;
-  outline: 2px solid #fff;
-  color: #fff;
   margin: 1.2rem 1rem;
-  border-radius: 5px !important;
+  font-size: 20px;
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
   cursor: pointer;
 }
 .code {
@@ -279,7 +279,7 @@ code {
 }
 .copy {
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 0;
   right: 0;
   text-align: center;
@@ -318,7 +318,7 @@ code {
 /* footer */
 .footer-content {
   position: relative;
-  padding: 3rem 0 0.5rem;
+  padding: 5rem 0 0.5rem;
   text-align: center;
   background-color: blue;
   clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
@@ -328,8 +328,12 @@ code {
   height: auto;
   padding-bottom: 0.5rem;
 }
+.footer-content .logo h1 {
+  font-size: 38px;
+}
 .contact p,
-.social span {
+.social span,
+.copyright p {
   color: #fff;
 }
 .contact p {
@@ -339,16 +343,8 @@ code {
   display: inline-block;
   margin: 0 0.5rem 1.5rem;
 }
-.copyright {
-  padding: 5px 0;
-}
 .copyright p {
-  text-align: center;
-  font-size: 14px;
   letter-spacing: 2px;
-}
-.copyright a {
-  color: #222;
 }
 .footer-pattern {
   position: absolute;
