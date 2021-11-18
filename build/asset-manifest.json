@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.da10e732.chunk.css",
+    "main.js": "/static/js/main.514e2e41.chunk.js",
+    "main.js.map": "/static/js/main.514e2e41.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c2e8e232.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c2e8e232.js.map",
+    "static/js/2.cecccc6a.chunk.js": "/static/js/2.cecccc6a.chunk.js",
+    "static/js/2.cecccc6a.chunk.js.map": "/static/js/2.cecccc6a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.da10e732.chunk.css.map": "/static/css/main.da10e732.chunk.css.map",
+    "static/js/2.cecccc6a.chunk.js.LICENSE.txt": "/static/js/2.cecccc6a.chunk.js.LICENSE.txt",
+    "static/media/bg-pattern-intro-left-desktop.3a425b38.svg": "/static/media/bg-pattern-intro-left-desktop.3a425b38.svg",
+    "static/media/bg-pattern-intro-left-mobile.111709ef.svg": "/static/media/bg-pattern-intro-left-mobile.111709ef.svg",
+    "static/media/bg-pattern-intro-right-desktop.0c130b3f.svg": "/static/media/bg-pattern-intro-right-desktop.0c130b3f.svg",
+    "static/media/bg-pattern-intro-right-mobile.0354e571.svg": "/static/media/bg-pattern-intro-right-mobile.0354e571.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c2e8e232.js",
+    "static/js/2.cecccc6a.chunk.js",
+    "static/css/main.da10e732.chunk.css",
+    "static/js/main.514e2e41.chunk.js"
+  ]
+}
