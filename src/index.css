@@ -122,6 +122,8 @@ input {
 select {
   width: 100%;
   padding: 15px 0;
+  background: none;
+  background-color: #fff;
   border: 0;
   outline: 0;
   border-radius: 5px;
@@ -148,7 +150,7 @@ button {
   outline: 2px solid #fff;
   color: #fff;
   margin: 1.2rem 1rem;
-  border-radius: 5px;
+  border-radius: 5px !important;
   cursor: pointer;
 }
 .code {
@@ -260,21 +262,24 @@ code {
 .clr-preview1 {
   margin-bottom: 0.3rem;
 }
+.footer {
+  position: relative;
+}
 .footer span {
   color: rgb(116, 113, 113);
   cursor: pointer;
 }
 .fa-copy {
-  transform: scale(1);
+  transform: scale(1.1);
   transition: transform 0.2s ease;
 }
 .fa-copy:hover,
 .fa-copy:focus {
-  transform: scale(1.15);
+  transform: scale(1.18);
 }
 .copy {
   position: absolute;
-  top: 140px;
+  top: 10px;
   left: 0;
   right: 0;
   text-align: center;

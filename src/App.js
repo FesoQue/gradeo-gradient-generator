@@ -256,7 +256,7 @@ const App = () => {
           <div className='to-top'>
             <div
               className={
-                scrollValue > 1800 ? 'arrow-up show-arrow' : 'arrow-up'
+                scrollValue > 1000 ? 'arrow-up show-arrow' : 'arrow-up'
               }
               style={{ background: `${color1}` }}
             >
