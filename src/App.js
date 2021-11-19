@@ -3,7 +3,7 @@ import { Gradient } from './Gradient';
 import { Footer } from './Footer';
 import Values from 'values.js';
 import BG_PATTERN_R from './images/bg-pattern-intro-right-mobile.svg';
-import BG_PATTERN_L from './images/bg-pattern-intro-left-mobile.svg';
+import BG_PATTERN_L from './images/bg-pattern-intro-left-desktop.svg';
 import BG_PATTERN_R_XL from './images/bg-pattern-intro-right-desktop.svg';
 import BG_PATTERN_L_XL from './images/bg-pattern-intro-left-desktop.svg';
 
@@ -20,6 +20,8 @@ const App = () => {
   const [size, setSize] = useState('');
   const refContainer = useRef(null);
 
+  // console.log(refContainer);
+  //  color 1
   const handleColor1 = (e) => {
     const colorValue = e.target.value;
     setColor1(colorValue);
@@ -158,7 +160,12 @@ const App = () => {
                       placeholder='#dc143c'
                     />
                   </div>
-                  <button type='submit'>Generate 🚀 </button>
+                  <button type='submit'>
+                    Generate{' '}
+                    <span>
+                      <i className='fas fa-rocket'></i>
+                    </span>{' '}
+                  </button>
                 </div>
               </form>
             </div>
