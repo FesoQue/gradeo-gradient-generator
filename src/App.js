@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Gradient } from './Gradient';
 import { Footer } from './Footer';
 import Values from 'values.js';
@@ -18,8 +18,8 @@ const App = () => {
   const [mergedColors, setMergedColors] = useState([]);
   const [scrollY, setScrollY] = useState('');
   const [size, setSize] = useState('');
+  const refContainer = useRef(null);
 
-  //  color 1
   const handleColor1 = (e) => {
     const colorValue = e.target.value;
     setColor1(colorValue);
@@ -44,6 +44,13 @@ const App = () => {
         setClrList1(gradColor1);
         setClrList2(gradColor2);
         handleColors();
+
+        // scroll into view
+        refContainer.current.scrollIntoView({
+          behaviour: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
       }
       // show error if one of the input is blank
       if ((color1 && !color2) || (!color1 && color2) || (!color1 && !color2)) {
@@ -92,7 +99,7 @@ const App = () => {
       window.removeEventListener('scroll', checkScroll);
       window.removeEventListener('resize', checkSize);
     };
-  }, [color1, color2, direction, handleColors]);
+  }, [color1, color2, direction, handleColors, refContainer]);
 
   const scrollValue = Math.floor(scrollY);
 
@@ -210,7 +217,7 @@ const App = () => {
         </header>
         {/* gradient component */}
         {/* display gradient palletes */}
-        <section className='gradients-section'>
+        <section className='gradients-section' ref={refContainer}>
           <div className='boxes wrapper'>
             {mergedColors.map((colors, index) => {
               const firstSets = colors[0];
@@ -240,7 +247,7 @@ const App = () => {
           </div>
         </section>
         {/* back to top */}
-        {size === '900' || size > '900' ? (
+        {size === 900 || size > 900 ? (
           <div className='to-top'>
             <div
               className={
