@@ -18,12 +18,6 @@ export const Footer = ({ bgColor1, bgColor2 }) => {
               {/* <h2>coloree.</h2> */}
             </div>
           </div>
-          {/* email */}
-          <div className='contact'>
-            <p>
-              <a href='mailto:fesoque0@gmail.com'>fesoque0@gmail.com</a>
-            </p>
-          </div>
           <div className='social'>
             {/* github */}
             <span>
@@ -46,6 +40,12 @@ export const Footer = ({ bgColor1, bgColor2 }) => {
               </a>
             </span>
           </div>
+          {/* mail to */}
+          <div className='contact'>
+            <p>
+              <a href='mailto:fesoque0@gmail.com'>Have a question?</a>
+            </p>
+          </div>
         </div>
         {/* patterns */}
         <img
@@ -59,11 +59,11 @@ export const Footer = ({ bgColor1, bgColor2 }) => {
           alt='PATTERN'
         />
         <div className='copyright attr'>
-          {/* <p>© {newDate}. All rights reserved</p> */}
-          <p>
+          <p>©{newDate} Coloree. By Adefeso Qudus</p>
+          {/* <p>
             Crafted && Designed by{' '}
             <a href='https://github.com/FesoQue'>Adefeso Q.A</a>
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Gradient } from './Gradient';
 import { Footer } from './Footer';
 import Values from 'values.js';
@@ -59,13 +59,13 @@ const App = () => {
     }, 3000);
   };
   //this functions merge the two colors arrays
-  const handleColors = () => {
+  const handleColors = useCallback(() => {
     let colors = [];
     for (let i = 0; i < clrList1.length; i++) {
       colors[i] = [clrList1[i], clrList2[i]];
       setMergedColors(colors);
     }
-  };
+  }, [clrList1, clrList2]);
   // copy cssCode
   const copyCSS = () => {
     const cssCode = `background-image: linear-gradient(to ${direction}, ${color1}, ${color2});`;
@@ -80,6 +80,7 @@ const App = () => {
   const checkScroll = () => {
     setScrollY(window.scrollY);
   };
+  // check device's width
   const checkSize = () => [setSize(window.innerWidth)];
 
   useEffect(() => {
@@ -91,7 +92,7 @@ const App = () => {
       window.removeEventListener('scroll', checkScroll);
       window.removeEventListener('resize', checkSize);
     };
-  }, [color1, color2, direction]);
+  }, [color1, color2, direction, handleColors]);
 
   const scrollValue = Math.floor(scrollY);
 
@@ -112,9 +113,8 @@ const App = () => {
                   <h1>
                     <a href='#'>Coloree.</a>
                   </h1>
-                  {/* <h2>coloree.</h2> */}
+                  <p className='tagline'>express your unique mood</p>
                 </div>
-                <p className='tagline'>express your unique mood</p>
               </div>
               {/* form */}
               <form onSubmit={handleSubmit}>
@@ -137,9 +137,7 @@ const App = () => {
                         <option value='top'>Top</option>
                         <option value='right'>Right</option>
                         <option value='left'>Left</option>
-                        <option selected value='bottom'>
-                          Bottom
-                        </option>
+                        <option value='bottom'>Bottom</option>
                       </select>
                     </div>
                   </div>
@@ -163,14 +161,19 @@ const App = () => {
             <div className='code wrapper'>
               <p>CSS Code:</p>
               <code>
-                background-image: linear-gradient(to {direction}, {color1},{' '}
-                {color2}
-                );
+                <span className='cc1'>background-image: </span>
+                <span className='cc4'>
+                  <span className='cc2'>linear-gradient</span>(
+                </span>
+                <span className='cc3'>to {direction}</span>
+                <span className='cc4'>,</span> {color1}
+                <span className='cc4'>,</span> {color2}
+                <span className='cc4'>);</span>
               </code>
               {/* copy */}
               <div className='copy-css'>
                 {copy ? (
-                  <small>💚 </small>
+                  <small> ✔️ </small>
                 ) : (
                   <span onClick={copyCSS}>
                     <i className='fas fa-copy'></i>
@@ -256,7 +259,7 @@ const App = () => {
           <div className='to-top'>
             <div
               className={
-                scrollValue > 1000 ? 'arrow-up show-arrow' : 'arrow-up'
+                scrollValue > 1300 ? 'arrow-up show-arrow' : 'arrow-up'
               }
               style={{ background: `${color1}` }}
             >

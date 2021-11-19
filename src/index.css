@@ -3,6 +3,7 @@
 *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 html,
 body {
@@ -11,13 +12,13 @@ body {
 }
 body {
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
   background-color: #fafafa;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
 }
 p {
   font-size: 16px;
@@ -39,10 +40,10 @@ main {
 header {
   position: relative;
   width: 100%;
-  padding: 2rem 0 4.3rem;
   min-height: 80vh;
   display: grid;
   place-items: center;
+  padding: 2rem 0 4rem;
   text-align: center;
   clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
 }
@@ -52,23 +53,21 @@ header {
   margin: 0 auto;
 }
 .identity {
-  height: calc(60vh - 45vh);
-  display: grid;
-  place-items: center;
   padding-bottom: 2rem;
 }
+
 .identity .logo {
   color: #fff;
-  margin-bottom: 0.6rem;
 }
 .logo {
   position: relative;
 }
 .logo h1 {
+  padding-bottom: 5px;
   font-size: 47px;
-  /* -webkit-text-stroke: 1px #f1f1f1; */
   text-shadow: 3px 5px 2px #333;
 }
+
 .identity p {
   color: #fff;
 }
@@ -161,9 +160,21 @@ button {
 code {
   display: inline-block;
   padding: 2rem 0.5rem;
-  background-color: #333;
+  background-color: #0e141b;
   clip-path: polygon(0 24%, 100% 9%, 100% 78%, 0% 95%);
   border-left: 5px solid #fff;
+}
+.cc1 {
+  color: #ff39a8;
+}
+.cc2 {
+  color: #04b8cf;
+}
+.cc3 {
+  color: #ffe100;
+}
+.cc4 {
+  color: #713cc3;
 }
 .copy-css {
   position: absolute;
@@ -177,7 +188,7 @@ code {
 }
 .err {
   position: absolute;
-  top: -25px;
+  top: -28px;
   left: 0;
   right: 0;
   text-align: center;
@@ -188,7 +199,7 @@ code {
   animation-iteration-count: 1;
   transition: opacity 0.2s ease;
   transition: color 0.2s ease;
-  color: burlywood;
+  color: rgb(243, 240, 53);
 }
 
 @keyframes inOut {
@@ -242,7 +253,7 @@ code {
   transition: box-shadow 0.3s ease;
 }
 .box-wrapper:hover {
-  box-shadow: 5px 8px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.16);
 }
 .box {
   padding: 3rem;
@@ -326,7 +337,7 @@ code {
 }
 .footer-content .identity {
   height: auto;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 .footer-content .logo h1 {
   font-size: 38px;
@@ -339,12 +350,16 @@ code {
 .contact p {
   margin-bottom: 1rem;
 }
+.contact p a {
+  text-decoration: underline;
+}
 .social span {
   display: inline-block;
   margin: 0 0.5rem 1.5rem;
 }
 .copyright p {
-  letter-spacing: 2px;
+  font-size: 15px;
+  letter-spacing: 1px;
 }
 .footer-pattern {
   position: absolute;
@@ -360,7 +375,7 @@ code {
 /* back to top */
 .to-top {
   position: fixed;
-  top: 50%;
+  top: 53%;
   right: 20px;
   z-index: 10;
 }
