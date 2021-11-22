@@ -146,7 +146,7 @@ const App = () => {
                         <option value='top'>Top</option>
                         <option value='right'>Right</option>
                         <option value='left'>Left</option>
-                        <option value='bottom'>Bottom</option>
+                        <option selected value='bottom'>Bottom</option>
                       </select>
                     </div>
                   </div>
