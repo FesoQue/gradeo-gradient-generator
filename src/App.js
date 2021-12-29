@@ -122,7 +122,7 @@ const App = () => {
                   <h1>
                     <a href='#'>Coloree.</a>
                   </h1>
-                  <p className='tagline'>gradients with different shade</p>
+                  <p className='tagline'>color gradient with multiple shades</p>
                 </div>
               </div>
               {/* form */}
